@@ -69,11 +69,12 @@ public class EditActivity extends AppCompatActivity {
                 }
                 titleEditText.setText(currentTask.getName());
                 String[] months = getResources().getStringArray(R.array.month_names);
+                monthNum = currentTask.getMonthNum();
                 deadlineEditText.setText(String.format(Locale.getDefault(),
                         "%s, %d %s %s",
                         currentTask.getDay(),
                         currentTask.getDate(),
-                        months[currentTask.getMonthNum()-1],
+                        months[monthNum-1],
                         currentTask.getYear()));
                 descriptionEditText.setText(currentTask.getDescription());
             }
